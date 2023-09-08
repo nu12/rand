@@ -4,6 +4,9 @@ on:
     tags:
       - '*'
 
+permissions:
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -20,6 +23,7 @@ jobs:
         gh release create ${{ github.ref_name }}
 
   build:
+    needs: [release]
     strategy:
       matrix:
         os: [macos, ubuntu, windows]
