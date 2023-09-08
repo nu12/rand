@@ -1,19 +1,13 @@
 package rand
 
-import (
-	"math/rand"
-	"time"
-)
-
 func GenerateChar(i int, l, u bool) string {
 	out := ""
 
 	if i > 0 {
 		out += GenerateChar(i-1, l, u)
 		pool := providePool(l, u)
-		s := rand.NewSource(time.Now().UnixNano())
-		r := rand.New(s)
-		out += string(pool[r.Intn(len(pool))])
+		n := getRandomInt(len(pool))
+		out += string(pool[n])
 	}
 
 	return out
