@@ -68,3 +68,11 @@ Use "rand [command] --help" for more information about a command.
 ```
 
 For further information about a specific command, use the `-h` flag (i.e. `rand char -h`).
+
+### Docker
+
+Run the following docker command to run `rand` without a local instalation:
+
+```
+docker run --rm ghcr.io/nu12/rand [command] length [flags]
+```
