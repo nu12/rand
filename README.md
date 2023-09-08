@@ -2,7 +2,30 @@
 
 A cli utility that generates random strings based on given paramenters.
 
+[TOC]
+
 ## Install
+
+### Go install
+
+Run `go install` to download the binary to the go's binary folder:
+
+```
+go install github.com/nu12/rand
+```
+
+Note: go's binary folder (tipically `~/go/bin`) should be added to your PATH.
+
+### From release (x86_64 only)
+
+Download a tagged release binary for your OS (ubuntu, macos, windows) placing it in a folder in your PATH and make it executable (may require elevated permissions):
+
+```
+wget -O /usr/local/bin/rand https://github.com/nu12/rand/releases/download/vX.Y/rand-ubuntu
+chmod +x /usr/local/bin/rand
+```
+
+Note: replace `X.Y` with a valid version from the repository's releases and `ubuntu` with the appropriate OS.
 
 ### From source
 
