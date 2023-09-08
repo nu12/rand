@@ -1,19 +1,11 @@
 package rand
 
-import (
-	"math/rand"
-	"time"
-)
-
 func GeneratePassword(i int, l, u bool) string {
 	out := ""
 
 	if i > 0 {
 		out += GeneratePassword(i-1, l, u)
-
-		s := rand.NewSource(time.Now().UnixNano())
-		r := rand.New(s)
-		p := r.Intn(3)
+		p := getRandomInt(3)
 		switch p {
 		case 0:
 			out += GenerateNum(1)
@@ -23,6 +15,5 @@ func GeneratePassword(i int, l, u bool) string {
 			out += GenerateSpecial(1)
 		}
 	}
-
 	return out
 }
