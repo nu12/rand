@@ -2,8 +2,6 @@
 
 A cli utility that generates random strings based on given paramenters.
 
-[TOC]
-
 ## Install
 
 ### Go install
