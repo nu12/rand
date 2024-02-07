@@ -9,7 +9,7 @@ A cli utility that generates random strings based on given paramenters.
 Run `go install` to download the binary to the go's binary folder:
 
 ```
-go install github.com/nu12/rand
+go install github.com/nu12/rand@latest
 ```
 
 Note: go's binary folder (tipically `~/go/bin`) should be added to your PATH.
@@ -19,7 +19,7 @@ Note: go's binary folder (tipically `~/go/bin`) should be added to your PATH.
 Download a tagged release binary for your OS (ubuntu, macos, windows) placing it in a folder in your PATH and make it executable (may require elevated permissions):
 
 ```
-wget -O /usr/local/bin/rand https://github.com/nu12/rand/releases/download/vX.Y/rand-ubuntu
+wget -O /usr/local/bin/rand https://github.com/nu12/rand/releases/download/X.Y/rand-ubuntu
 chmod +x /usr/local/bin/rand
 ```
 
@@ -62,7 +62,6 @@ Available Commands:
 
 Flags:
   -h, --help     help for rand
-  -t, --toggle   Help message for toggle
 
 Use "rand [command] --help" for more information about a command.
 ```

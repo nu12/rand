@@ -6,7 +6,7 @@ COPY . .
 
 RUN go build -o rand main.go
 
-FROM alpine:3.18.3
+FROM alpine:3.18.6
 LABEL org.opencontainers.image.source https://github.com/nu12/rand
 
 WORKDIR /app
