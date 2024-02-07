@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	rand "github.com/nu12/rand/internal"
+	rand "github.com/nu12/rand/pkg"
 	"github.com/spf13/cobra"
 )
 
@@ -16,6 +16,6 @@ var uuidCmd = &cobra.Command{
 	Short: "Generate an UUID",
 	Long:  `Generate an UUID`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(rand.GenerateUUID())
+		fmt.Println(rand.UUID())
 	},
 }

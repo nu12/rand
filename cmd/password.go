@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	rand "github.com/nu12/rand/internal"
+	rand "github.com/nu12/rand/pkg"
 	"github.com/spf13/cobra"
 )
 
@@ -18,6 +18,6 @@ var passwordCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		i := getLength(args)
 		checkLowerUpper()
-		fmt.Println(rand.GeneratePassword(i, lower, upper))
+		fmt.Println(rand.Password(i, lower, upper))
 	},
 }

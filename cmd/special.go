@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	rand "github.com/nu12/rand/internal"
+	rand "github.com/nu12/rand/pkg"
 	"github.com/spf13/cobra"
 )
 
@@ -17,6 +17,6 @@ var specialCmd = &cobra.Command{
 	Long:  `Generate a random string of special characters of a given length`,
 	Run: func(cmd *cobra.Command, args []string) {
 		i := getLength(args)
-		fmt.Println(rand.GenerateSpecial(i))
+		fmt.Println(rand.Special(i))
 	},
 }
