@@ -57,12 +57,14 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.TOKEN }}
       
-    - name: tag
+    - name: Adjust tag for docker image
+      id: tag
       run: |
         export TAG=$(echo "${{ github.ref_name }}" | tr -d "v")
+        echo "value=$TAG" >> "$GITHUB_OUTPUT"
 
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: ghcr.io/nu12/rand:latest,ghcr.io/nu12/rand:$TAG
+        tags: ghcr.io/nu12/rand:latest,ghcr.io/nu12/rand:${{ steps.tag.outputs.value }}
