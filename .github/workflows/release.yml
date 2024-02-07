@@ -57,7 +57,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.TOKEN }}
       
-    - name: build
+    - name: tag
       run: |
         export TAG=$(echo "${{ github.ref_name }}" | tr -d "v")
 
@@ -65,4 +65,4 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: ghcr.io/nu12/rand:latest,ghcr.io/nu12/rand:${{ github.ref_name }}
+        tags: ghcr.io/nu12/rand:latest,ghcr.io/nu12/rand:$TAG
