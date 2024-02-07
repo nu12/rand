@@ -1,6 +1,38 @@
 # rand
 
-A cli utility that generates random strings based on given paramenters.
+A Go package and CLI utility that generates random strings based on given paramenters.
+
+# Package
+
+Get the package with:
+
+```bash
+go get github.com/nu12/rand@v1.1.0
+```
+
+Use any of the available functions below:
+
+```go
+package main
+
+import (
+	rand "github.com/nu12/rand/pkg"
+)
+
+func main() {
+	length := 12
+	lowerOnly := false
+	upperOnly := false
+	rand.Alpha(length, lowerOnly, upperOnly)
+	rand.Char(length, lowerOnly, upperOnly)
+	rand.Num(length)
+	rand.Password(length, lowerOnly, upperOnly)
+	rand.Special(length)
+	rand.UUID()
+}
+```
+
+# CLI
 
 ## Install
 
@@ -8,7 +40,7 @@ A cli utility that generates random strings based on given paramenters.
 
 Run `go install` to download the binary to the go's binary folder:
 
-```
+```bash
 go install github.com/nu12/rand@latest
 ```
 
@@ -18,25 +50,25 @@ Note: go's binary folder (tipically `~/go/bin`) should be added to your PATH.
 
 Download a tagged release binary for your OS (ubuntu, macos, windows) placing it in a folder in your PATH and make it executable (may require elevated permissions):
 
-```
-wget -O /usr/local/bin/rand https://github.com/nu12/rand/releases/download/X.Y/rand-ubuntu
+```bash
+wget -O /usr/local/bin/rand https://github.com/nu12/rand/releases/download/vX.Y.Z/rand-ubuntu
 chmod +x /usr/local/bin/rand
 ```
 
-Note: replace `X.Y` with a valid version from the repository's releases and `ubuntu` with the appropriate OS.
+Note: replace `X.Y.Z` with a valid version from the repository's releases and `ubuntu` with the appropriate OS.
 
 ### From source
 
 Clone this repo and compile the source code:
 
-```
+```bash
 git clone github.com/nu12/rand
 cd rand
 go build -o rand main.go
 ```
 
 Move binary to a bin folder in your PATH (may require elevated permissions):
-```
+```bash
 mv rand /usr/local/bin/
 ```
 
@@ -68,7 +100,7 @@ Use "rand [command] --help" for more information about a command.
 
 For further information about a specific command, use the `-h` flag (i.e. `rand char -h`).
 
-### Docker
+#### Docker
 
 Run the following docker command to run `rand` without a local instalation:
 
