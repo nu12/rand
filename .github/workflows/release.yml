@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     tags:
-      - '*'
+      - 'v*.*.*'
 
 permissions:
   contents: write
@@ -57,6 +57,10 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.TOKEN }}
       
+    - name: build
+      run: |
+        export TAG=$(echo "${{ github.ref_name }}" | tr -d "v")
+
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
