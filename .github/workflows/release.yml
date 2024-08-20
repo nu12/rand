@@ -55,12 +55,12 @@ jobs:
       env:
         GH_TOKEN: ${{ github.TOKEN }}
       run: |
-        zip rand-win-amd64.zip rand.exe
+        7z a rand-win-amd64.zip rand.exe
         gh release upload ${{ github.ref_name }} rand-win-amd64.zip
 
   darwin-amd64:
     needs: [release]
-    runs-on: "macos-12"
+    runs-on: "macos-13"
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-go@v4
