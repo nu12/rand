@@ -29,7 +29,6 @@ var lower bool
 var upper bool
 
 func init() {
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	charCmd.Flags().BoolVarP(&lower, "lower", "l", false, "Only lower case characters")
 	charCmd.Flags().BoolVarP(&upper, "upper", "u", false, "Only upper case characters")
 	alphaCmd.Flags().BoolVarP(&lower, "lower", "l", false, "Only lower case characters")
