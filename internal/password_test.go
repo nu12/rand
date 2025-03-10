@@ -15,5 +15,4 @@ func TestPassword(t *testing.T) {
 
 		i++
 	}
-
 }

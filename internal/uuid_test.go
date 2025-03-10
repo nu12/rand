@@ -14,5 +14,4 @@ func TestUUID(t *testing.T) {
 	if !match {
 		t.Errorf("Error creating UUID. Got %s", uuid)
 	}
-
 }

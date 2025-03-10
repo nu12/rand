@@ -22,5 +22,4 @@ func TestSpecial(t *testing.T) {
 
 		i++
 	}
-
 }
