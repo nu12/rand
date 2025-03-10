@@ -1,11 +1,14 @@
 package rand
 
 func GenerateChar(i int, l, u bool) string {
+	return GenerateCharFromPool(i, ProvideDefaultPool(l, u))
+}
+
+func GenerateCharFromPool(i int, pool string) string {
 	out := ""
 
 	if i > 0 {
-		out += GenerateChar(i-1, l, u)
-		pool := providePool(l, u)
+		out += GenerateCharFromPool(i-1, pool)
 		n := getRandomInt(len(pool))
 		out += string(pool[n])
 	}
@@ -13,7 +16,7 @@ func GenerateChar(i int, l, u bool) string {
 	return out
 }
 
-func providePool(l bool, u bool) string {
+func ProvideDefaultPool(l bool, u bool) string {
 	const pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 	localPool := pool
@@ -26,4 +29,8 @@ func providePool(l bool, u bool) string {
 		localPool = pool[26:52]
 	}
 	return localPool
+}
+
+func ProvideUUIDPool() string {
+	return "abcdef"
 }

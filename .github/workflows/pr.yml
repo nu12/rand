@@ -1,24 +1,19 @@
-name: PR
+name: 'PR'
+
 on:
+  workflow_dispatch: {}
   pull_request:
     branches:
     - main
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-go@v4
-      with:
-        go-version: 1.22.5
-    
-    - name: Lint
-      uses: golangci/golangci-lint-action@v3
-      with:
-        version: v1.60
-        
-    - name: Tests
-      run: |
-        go test -coverprofile cover.out -v ./...
-        go tool cover -func=cover.out
+  ci:
+    name: CI
+    uses: nu12/templates/.github/workflows/go-pr.yml@main
+    with:
+      run-lint: true
+      run-test: true
+      run-docker-build: true
+      go-version: '1.24.0'
+      docker-tag: 'latest'
+    secrets: inherit

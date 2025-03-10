@@ -24,7 +24,6 @@ func TestAlpha(t *testing.T) {
 
 		i++
 	}
-
 }
 
 func TestAlphaLower(t *testing.T) {
@@ -35,7 +34,6 @@ func TestAlphaLower(t *testing.T) {
 	if !match {
 		t.Errorf("Error creating characters. Expected all lower case, got %s", n)
 	}
-
 }
 
 func TestAlphaUpper(t *testing.T) {
@@ -46,5 +44,4 @@ func TestAlphaUpper(t *testing.T) {
 	if !match {
 		t.Errorf("Error creating characters. Expected all upper case, got %s", n)
 	}
-
 }

@@ -1,4 +1,4 @@
-FROM golang:1.22.5-alpine as builder
+FROM golang:1.24.0-alpine AS builder
 
 WORKDIR /app
 
@@ -6,8 +6,8 @@ COPY . .
 
 RUN go build -o rand main.go
 
-FROM alpine:3.18.8
-LABEL org.opencontainers.image.source https://github.com/nu12/rand
+FROM alpine:3.21.3
+LABEL org.opencontainers.image.source=https://github.com/nu12/rand
 
 WORKDIR /app
 

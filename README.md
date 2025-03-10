@@ -91,6 +91,7 @@ Available Commands:
   password    Generate a random string of characters, numbers and special signs of a given length
   special     Generate a random string of special characters of a given length
   uuid        Generate an UUID
+  version     Show current version
 
 Flags:
   -h, --help     help for rand

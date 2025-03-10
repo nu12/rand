@@ -19,7 +19,6 @@ func TestChar(t *testing.T) {
 
 		i++
 	}
-
 }
 
 func TestLower(t *testing.T) {
@@ -30,7 +29,6 @@ func TestLower(t *testing.T) {
 	if !match {
 		t.Errorf("Error creating characters. Expected all lower case, got %s", n)
 	}
-
 }
 
 func TestUpper(t *testing.T) {
@@ -41,33 +39,40 @@ func TestUpper(t *testing.T) {
 	if !match {
 		t.Errorf("Error creating characters. Expected all upper case, got %s", n)
 	}
-
 }
 
-func TestPool(t *testing.T) {
+func TestDefaultPool(t *testing.T) {
 	full := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	lower := "abcdefghijklmnopqrstuvwxyz"
 	upper := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-	p := providePool(false, false)
+	p := ProvideDefaultPool(false, false)
 	if p != full {
 		t.Errorf("Error creating pool of characters. Expected %s, got %s", full, p)
 	}
 
-	p = providePool(true, false)
+	p = ProvideDefaultPool(true, false)
 	if p != lower {
 		t.Errorf("Error creating pool of characters. Expected %s, got %s", lower, p)
 	}
 
-	p = providePool(false, true)
+	p = ProvideDefaultPool(false, true)
 	if p != upper {
 		t.Errorf("Error creating pool of characters. Expected %s, got %s", upper, p)
 	}
 
 	// Overwrites to upper
-	p = providePool(true, true)
+	p = ProvideDefaultPool(true, true)
 	if p != upper {
 		t.Errorf("Error creating pool of characters. Expected %s, got %s", upper, p)
 	}
+}
 
+func TestUUIDPool(t *testing.T) {
+	full := "abcdef"
+
+	p := ProvideUUIDPool()
+	if p != full {
+		t.Errorf("Error creating pool of characters. Expected %s, got %s", full, p)
+	}
 }
