@@ -10,11 +10,11 @@ permissions:
 jobs:
   cd:
     name: Release
-    uses: nu12/templates/.github/workflows/go-release.yml@main
+    uses: nu12/templates/.github/workflows/go-release.v1.yml@main
     with:
       go-binary-name: 'rand'
       go-main: 'main.go'
-      go-version: '1.24.0'
+      go-version: '1.26.0'
       release-linux-amd64: true
       release-win-amd64: true
       release-darwin-amd64: true

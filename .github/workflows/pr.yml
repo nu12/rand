@@ -9,11 +9,11 @@ on:
 jobs:
   ci:
     name: CI
-    uses: nu12/templates/.github/workflows/go-pr.yml@main
+    uses: nu12/templates/.github/workflows/go-pr.v1.yml@main
     with:
       run-lint: true
       run-test: true
       run-docker-build: true
-      go-version: '1.24.0'
+      go-version: '1.26.0'
       docker-tag: 'latest'
     secrets: inherit
