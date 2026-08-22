@@ -14,7 +14,7 @@ jobs:
     with:
       go-binary-name: 'rand'
       go-main: 'main.go'
-      go-version: '1.26.0'
+      go-version: '1.26.6'
       release-linux-amd64: true
       release-win-amd64: true
       release-darwin-amd64: true
