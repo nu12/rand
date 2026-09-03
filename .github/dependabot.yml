@@ -5,13 +5,12 @@ updates:
   schedule:
     interval: weekly
   open-pull-requests-limit: 10
-  assignees:
-  - "nu12"
-- package-ecosystem: github-actions
-  directory: "/"
-  schedule:
-    interval: weekly
-  open-pull-requests-limit: 10
+  groups:
+    versions:
+      applies-to: version-updates
+      update-types: 
+      - minor
+      - patch
   assignees:
   - "nu12"
 - package-ecosystem: "docker"
